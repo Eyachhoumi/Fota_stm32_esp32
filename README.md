@@ -1,4 +1,4 @@
-                                                                        FOTA (Mise à jour de Firmware Over-The-Air) pour STM32 et ESP32
+     FOTA (Mise à jour de Firmware Over-The-Air) pour STM32 et ESP32
 
 Ce projet démontre un système de mise à jour de firmware Over-The-Air (FOTA) pour les microcontrôleurs STM32 en utilisant un ESP32 pour la connectivité WiFi et MQTT pour la communication. L'objectif principal est de permettre des mises à jour de firmware sans fil et transparentes pour un microcontrôleur STM32F407, avec le module ESP32 prenant en charge le téléchargement du nouveau firmware.
 Fonctionnalités
