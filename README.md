@@ -1,5 +1,4 @@
-     
-#FOTA (Mise à jour de Firmware Over-The-Air) pour STM32 et ESP32
+     FOTA (Mise à jour de Firmware Over-The-Air) pour STM32 et ESP32
 Ce projet démontre un système de mise à jour de firmware Over-The-Air (FOTA) pour les microcontrôleurs STM32 en utilisant un ESP32 pour la connectivité WiFi et MQTT pour la communication. L'objectif principal est de permettre des mises à jour de firmware sans fil et transparentes pour un microcontrôleur STM32F407, avec le module ESP32 prenant en charge le téléchargement du nouveau firmware.
 Fonctionnalités
 
@@ -8,7 +7,7 @@ Fonctionnalités
     Validation CRC : Assurer l'intégrité du firmware en calculant et en vérifiant les valeurs CRC lors du processus de mise à jour du firmware.
     Téléchargement HTTP : Télécharger les binaires du firmware en utilisant des liens HTTP reçus via MQTT, avec l'ESP32 prenant en charge le téléchargement des fichiers.
 
-##Flux de Travail du Projet
+Flux de Travail du Projet
 
     Téléchargement du Firmware : Le nouveau binaire du firmware est téléchargé sur un serveur MinIO.
     Notification MQTT : Jenkins publie un message MQTT contenant le lien de téléchargement HTTP et la valeur CRC.
