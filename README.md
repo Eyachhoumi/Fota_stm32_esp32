@@ -1,4 +1,6 @@
       FOTA (Firmware Over-The-Air) for STM32 and ESP32
+
+      
          📝 Project Overview
       This project demonstrates a Firmware Over-The-Air (FOTA) update system for STM32 microcontrollers using an ESP32 module for WiFi connectivity and MQTT for communication. The main objective is to enable seamless, wireless firmware updates for the STM32F407 microcontroller, with the ESP32 module handling the firmware download process.
 
