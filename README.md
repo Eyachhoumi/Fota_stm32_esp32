@@ -1,26 +1,23 @@
-     FOTA (Mise à jour de Firmware Over-The-Air) pour STM32 et ESP32
-Ce projet démontre un système de mise à jour de firmware Over-The-Air (FOTA) pour les microcontrôleurs STM32 en utilisant un ESP32 pour la connectivité WiFi et MQTT pour la communication. L'objectif principal est de permettre des mises à jour de firmware sans fil et transparentes pour un microcontrôleur STM32F407, avec le module ESP32 prenant en charge le téléchargement du nouveau firmware.
-Fonctionnalités
+   FOTA (Firmware Over-The-Air) for STM32 and ESP32
+📝 Project Overview
+This project demonstrates a Firmware Over-The-Air (FOTA) update system for STM32 microcontrollers using an ESP32 module for WiFi connectivity and MQTT for communication. The main objective is to enable seamless, wireless firmware updates for the STM32F407 microcontroller, with the ESP32 module handling the firmware download process.
 
-    Mises à jour de firmware sans fil : Mettre à jour automatiquement le firmware sur un microcontrôleur STM32F407 via un message MQTT reçu par le module ESP32.
-    Connectivité WiFi avec ESP32 : Utilisation du module ESP32 pour se connecter à un réseau WiFi et s'abonner à des sujets MQTT.
-    Validation CRC : Assurer l'intégrité du firmware en calculant et en vérifiant les valeurs CRC lors du processus de mise à jour du firmware.
-    Téléchargement HTTP : Télécharger les binaires du firmware en utilisant des liens HTTP reçus via MQTT, avec l'ESP32 prenant en charge le téléchargement des fichiers.
-
-Flux de Travail du Projet
-
-    Téléchargement du Firmware : Le nouveau binaire du firmware est téléchargé sur un serveur MinIO.
-    Notification MQTT : Jenkins publie un message MQTT contenant le lien de téléchargement HTTP et la valeur CRC.
-    Abonnement ESP32 : Le module ESP32 s'abonne au sujet MQTT et reçoit le message contenant le lien HTTP et la valeur CRC.
-    Téléchargement par l'ESP32 : L'ESP32 télécharge le binaire du firmware en utilisant le lien HTTP reçu.
-    Transfert au STM32 : Une fois le téléchargement terminé, l'ESP32 transfère le fichier binaire au STM32 via une interface de communication (UART/I2C).
-    Vérification et Exécution : Le STM32 vérifie l'intégrité du firmware en utilisant la valeur CRC reçue et exécute le nouveau firmware si la vérification est réussie.
-
-##Prérequis
-
-    Carte STM32F407 Discovery
-    Module ESP32
-    Serveur MinIO
-    Broker MQTT Mosquitto
-    Serveur CI Jenkins
-    STM32CubeIDE et Arduino IDE
+🛠️ Features
+Wireless Firmware Updates: Automatically update the firmware on an STM32F407 microcontroller through an MQTT message received by the ESP32 module.
+WiFi Connectivity with ESP32: The ESP32 module connects to a WiFi network and subscribes to MQTT topics for receiving update notifications.
+CRC Validation: Ensures firmware integrity by calculating and verifying CRC values during the update process.
+HTTP Download: Downloads the firmware binary using HTTP links received via MQTT, with the ESP32 managing the file download.
+🔄 Project Workflow
+Firmware Upload: The new firmware binary is uploaded to a MinIO server.
+MQTT Notification: Jenkins publishes an MQTT message containing the HTTP download link and the CRC value of the firmware.
+ESP32 Subscription: The ESP32 module subscribes to the MQTT topic and receives the message with the HTTP link and CRC value.
+ESP32 Download: The ESP32 downloads the firmware binary using the received HTTP link.
+Transfer to STM32: Once the download is complete, the ESP32 transfers the binary file to the STM32 via a communication interface (UART/I2C).
+Verification and Execution: The STM32 verifies the firmware integrity using the received CRC value and executes the new firmware if the verification is successful.
+📋 Requirements
+STM32F407 Discovery Board
+ESP32 Module
+MinIO Server
+MQTT Broker (Mosquitto)
+CI Server (Jenkins)
+STM32CubeIDE and Arduino IDE
